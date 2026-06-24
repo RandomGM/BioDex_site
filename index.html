@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioDex Offline AI</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="page-shell">
+        <header class="hero">
+            <div class="hero-copy">
+                <span class="eyebrow">Offline & inteligente</span>
+                <h1>BioDex: IA local com um banco de dados gigante</h1>
+                <p>Descubra um aplicativo que funciona sem internet, responde rápido e explica tudo de forma leve e simples.</p>
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="#download" data-page="download">Baixar agora</a>
+                    <a class="btn btn-secondary" href="#como-funciona" data-page="how">Como funciona</a>
+                </div>
+            </div>
+            <div class="hero-panel">
+                <div class="panel-card">
+                    <h2>Projeto feito para você</h2>
+                    <p>Uma experiência casual, com botões convidativos e animações suaves para explorar a IA sem mistério.</p>
+                </div>
+            </div>
+        </header>
+        
+        <main>
+            <div class="page-content">
+                <section class="page-view page-home active" id="home">
+                    <section class="features">
+                        <div class="feature-card pulse-animation">
+                            <h3>1. IA offline</h3>
+                            <p>Rode a inteligência diretamente no seu dispositivo, sem depender de conexão de internet.</p>
+                        </div>
+                        <div class="feature-card pulse-animation delay-1">
+                            <h3>2. Banco de dados amplo</h3>
+                            <p>Conteúdo pré-carregado que ajuda a responder perguntas com contexto e precisão.</p>
+                        </div>
+                        <div class="feature-card pulse-animation delay-2">
+                            <h3>3. Interface simples</h3>
+                            <p>Botões claros, explicações diretas e um visual acolhedor para facilitar o uso.</p>
+                        </div>
+                    </section>
+
+                    <section class="story">
+                        <div class="story-text">
+                            <h2>Por que escolher um app com IA local?</h2>
+                            <p>Velocidade, privacidade e controle total. Tudo isso sem precisar ficar esperando a internet carregar.</p>
+                            <ul>
+                                <li>Seu histórico fica no dispositivo</li>
+                                <li>Respostas rápidas e disponíveis a qualquer hora</li>
+                                <li>Design amigável para qualquer usuário</li>
+                            </ul>
+                            <a class="btn btn-primary" href="#download" data-page="download">Veja como começar</a>
+                        </div>
+                        <div class="story-visual">
+                            <div class="device-mockup">
+                                <div class="device-screen">
+                                    <div class="chat-bubble bubble-left">Oi! Quero aprender sobre IA offline.</div>
+                                    <div class="chat-bubble bubble-right">Claro! Eu uso um banco de dados vasto para te responder.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="steps">
+                        <h2>Comece em 3 passos</h2>
+                        <div class="step-grid">
+                            <div class="step-card">
+                                <span>1</span>
+                                <h3>Instale</h3>
+                                <p>Abra o app e tenha a IA disponível imediatamente.</p>
+                            </div>
+                            <div class="step-card">
+                                <span>2</span>
+                                <h3>Explore</h3>
+                                <p>Veja tópicos, perguntas e como a base de dados está organizada.</p>
+                            </div>
+                            <div class="step-card">
+                                <span>3</span>
+                                <h3>Converse</h3>
+                                <p>Use o modo casual com botões e respostas fáceis de entender.</p>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+
+                <section class="page-view page-how" id="como-funciona">
+                    <div class="page-panel">
+                        <h2>Como funciona o BioDex?</h2>
+                        <p>BioDex roda a inteligência artificial diretamente no aparelho, usando um banco de dados completo para gerar respostas rápidas e transparentes.</p>
+                        <ul>
+                            <li>1. O app lê o seu pedido e busca no banco interno.</li>
+                            <li>2. Ele usa modelos locais para entender a pergunta.</li>
+                            <li>3. Em segundos, retorna uma resposta clara e confiável.</li>
+                        </ul>
+                        <p>Isso significa menos dependência de internet, mais privacidade e uma experiência fluida mesmo em viagem ou lugares sem sinal.</p>
+                        <a class="btn btn-secondary" href="#home" data-page="home">Voltar para início</a>
+                    </div>
+                </section>
+
+                <section class="page-view page-download" id="download">
+                    <div class="page-panel">
+                        <h2>Baixar agora</h2>
+                        <p>Pronto para ter a IA offline no seu dispositivo? Apenas alguns passos separam você do BioDex.</p>
+                        <ol>
+                            <li>Baixe o instalador do app.</li>
+                            <li>Execute a instalação e permita o acesso local.</li>
+                            <li>Abra o BioDex e comece a perguntar.</li>
+                        </ol>
+                        <p>Assim, você garante todas as vantagens do motor local e do vasto banco de dados sem precisar de internet.</p>
+                        <div class="download-actions">
+                            <a class="btn btn-primary" href="#" role="button">Download do BioDex</a>
+                            <a class="btn btn-secondary" href="#home" data-page="home">Voltar para início</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <div class="transition-overlay" id="transitionOverlay"></div>
+
+    <footer class="footer">
+        <p>BioDex Offline • IA local com base de dados gigante</p>
+    </footer>
+
+    <script>
+        const overlay = document.getElementById('transitionOverlay');
+        const views = document.querySelectorAll('.page-view');
+
+        function showPage(pageKey) {
+            views.forEach(view => {
+                view.classList.toggle('active', view.id === pageKey);
+            });
+        }
+
+        document.querySelectorAll('a[data-page]').forEach(link => {
+            link.addEventListener('click', event => {
+                event.preventDefault();
+                const targetPage = link.dataset.page;
+                overlay.classList.add('overlay-visible');
+
+                setTimeout(() => {
+                    showPage(targetPage === 'how' ? 'como-funciona' : targetPage === 'download' ? 'download' : 'home');
+                }, 220);
+
+                setTimeout(() => {
+                    overlay.classList.remove('overlay-visible');
+                }, 700);
+            });
+        });
+    </script>
+</body>
+</html>
