@@ -113,7 +113,7 @@
                         </ol>
                         <p>Assim, você aproveita a interface acessível e o banco de dados completo de forma rápida.</p>
                         <div class="download-actions">
-                            <a class="btn btn-primary" href="#" role="button">Começar no BioDex</a>
+                            <a class="btn btn-primary" href="https://biodex.ai" target="_blank" rel="noopener">Começar no BioDex</a>
                             <a class="btn btn-secondary" href="#home" data-page="home">Voltar para início</a>
                         </div>
                     </div>
@@ -131,6 +131,7 @@
     <script>
         const overlay = document.getElementById('transitionOverlay');
         const views = document.querySelectorAll('.page-view');
+        let isChangingPage = false;
 
         function showPage(pageKey) {
             views.forEach(view => {
@@ -138,19 +139,27 @@
             });
         }
 
+        function navigateTo(pageKey) {
+            if (isChangingPage) return;
+            isChangingPage = true;
+
+            overlay.classList.add('overlay-visible');
+            setTimeout(() => {
+                showPage(pageKey);
+            }, 220);
+
+            setTimeout(() => {
+                overlay.classList.remove('overlay-visible');
+                isChangingPage = false;
+            }, 620);
+        }
+
         document.querySelectorAll('a[data-page]').forEach(link => {
             link.addEventListener('click', event => {
                 event.preventDefault();
                 const targetPage = link.dataset.page;
-                overlay.classList.add('overlay-visible');
-
-                setTimeout(() => {
-                    showPage(targetPage === 'how' ? 'como-funciona' : targetPage === 'download' ? 'download' : 'home');
-                }, 220);
-
-                setTimeout(() => {
-                    overlay.classList.remove('overlay-visible');
-                }, 700);
+                const pageKey = targetPage === 'how' ? 'como-funciona' : targetPage === 'download' ? 'download' : 'home';
+                navigateTo(pageKey);
             });
         });
     </script>

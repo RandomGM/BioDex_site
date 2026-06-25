@@ -99,15 +99,32 @@ html {
 .transition-overlay {
     position: fixed;
     inset: 0;
-    background: #0b1220;
+    background: rgba(8, 18, 13, 0.92);
     pointer-events: none;
     opacity: 0;
-    transition: opacity 0.28s ease;
+    transition: opacity 0.32s ease;
     z-index: 999;
 }
 
 .transition-overlay.overlay-visible {
     opacity: 1;
+}
+
+.page-view {
+    opacity: 0;
+    pointer-events: none;
+    max-height: 0;
+    overflow: hidden;
+    transform: translateY(32px) scale(0.98);
+    transition: opacity 0.35s ease, transform 0.35s ease, max-height 0.35s ease;
+    will-change: opacity, transform;
+}
+
+.page-view.active {
+    opacity: 1;
+    pointer-events: auto;
+    max-height: 4000px;
+    transform: translateY(0) scale(1);
 }
 
 .btn-primary {
@@ -403,6 +420,7 @@ html {
     overflow: hidden;
     transform: translateY(24px);
     transition: opacity 0.35s ease, transform 0.35s ease, max-height 0.35s ease;
+    will-change: opacity, transform;
 }
 
 .page-view.active {
